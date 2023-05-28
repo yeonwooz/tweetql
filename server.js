@@ -1,4 +1,5 @@
 import {ApolloServer, gql} from "apollo-server";
+import {resolvers} from "./resolvers.js";
 
 //typedef, schema 설정
 // TODO 재귀 타입 선언 되는지 확인필요
@@ -22,6 +23,7 @@ const typeDefs = gql`
   type Query {
     allTweets: [Tweet!]! # 유효한 Tweet리스트만 응답으로 받을 것
     tweet(id: ID!): Tweet
+    ping: String!
   }
 
   # Post, Put, Patch, Delete 에 해당하는 데이터 변경 요청: Mutation
@@ -31,7 +33,7 @@ const typeDefs = gql`
   }
 `;
 
-const server = new ApolloServer({typeDefs});
+const server = new ApolloServer({typeDefs, resolvers});
 server.listen().then(({url}) => {
   console.log(`Running on ${url}`);
 });
