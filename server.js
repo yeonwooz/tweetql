@@ -21,9 +21,13 @@ const typeDefs = gql`
     allTweets: [Tweet]
     tweet(id: ID): Tweet
   }
+
+  # Post, Put, Patch, Delete 에 해당하는 데이터 변경 요청: Mutation
+  type Mutation {
+    postTweet(text: String, userId: ID): Tweet
+    deleteTweet(id: ID): Boolean
+  }
 `;
-
-
 
 const server = new ApolloServer({typeDefs});
 server.listen().then(({url}) => {
