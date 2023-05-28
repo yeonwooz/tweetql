@@ -16,14 +16,13 @@ const typeDefs = gql`
     # Scalar필드를 가진 타입을 정의해주어야 한다(최소단위)
     id: ID!
     text: String!
-    author: User!
+    author: User
   }
 
   # 필수타입 : Query
   type Query {
     allTweets: [Tweet!]! # 유효한 Tweet리스트만 응답으로 받을 것
     tweet(id: ID!): Tweet
-    ping: String!
   }
 
   # Post, Put, Patch, Delete 에 해당하는 데이터 변경 요청: Mutation

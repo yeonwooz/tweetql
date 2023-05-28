@@ -1,11 +1,14 @@
+import axios from "axios";
+
+const getTweets = async () => {
+  const res = await axios.get("http://localhost:3000/tweets");
+  return res.data;
+};
+
 const resolvers = {
   Query: {
-    tweet() {
-      console.log("I'm called");
-      return null;
-    },
-    ping() {
-      return "pong";
+    async allTweets() {
+      return await getTweets();
     },
   },
 };

@@ -1,0 +1,12 @@
+{
+  "tweets": [
+    {
+      "id": "1",
+      "text": "first tweet"
+    },
+    {
+      "id": "2",
+      "text": "second tween"
+    }
+  ]
+}
