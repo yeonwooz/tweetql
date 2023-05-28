@@ -7,7 +7,7 @@ const typeDefs = gql`
   type User {
     id: ID
     username: String
-    childUser: User   
+    parent: User
   }
   type Tweet {
     # Scalar필드를 가진 타입을 정의해주어야 한다(최소단위)
@@ -19,8 +19,11 @@ const typeDefs = gql`
   # 필수타입 : Query
   type Query {
     allTweets: [Tweet]
+    tweet(id: ID): Tweet
   }
 `;
+
+
 
 const server = new ApolloServer({typeDefs});
 server.listen().then(({url}) => {
