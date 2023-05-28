@@ -10,6 +10,7 @@ const typeDefs = gql`
     username: String!
     firstName: String!
     lastName: String
+    fullName: String! 
     parent: User!
   }
   type Tweet {
@@ -21,6 +22,7 @@ const typeDefs = gql`
 
   # 필수타입 : Query
   type Query {
+    allUsers: [User!]!
     allTweets: [Tweet!]! # 유효한 Tweet리스트만 응답으로 받을 것
     tweet(id: ID!): Tweet
   }

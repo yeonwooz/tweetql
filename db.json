@@ -7,14 +7,24 @@
     {
       "id": "2",
       "text": "second tweet"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Iron",
+      "lastName": "Man"
     },
     {
-      "id": 1685280355442,
-      "text": "I am new"
+      "id": "2",
+      "firstName": "Spider",
+      "lastName": "Man"
     },
     {
-      "id": 1685280359021,
-      "text": "I am new"
+      "id": "3",
+      "firstName": "Captain",
+      "lastName": "Marvel",
+      "fullName": "Captain Marvel"
     }
   ]
 }
