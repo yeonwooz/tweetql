@@ -2,11 +2,13 @@
   "tweets": [
     {
       "id": "1",
-      "text": "first tweet"
+      "text": "first tweet",
+      "userId": "2"
     },
     {
       "id": "2",
-      "text": "second tweet"
+      "text": "second tweet",
+      "userId": "3"
     }
   ],
   "users": [

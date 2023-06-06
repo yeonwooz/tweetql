@@ -49,10 +49,16 @@ const resolvers = {
   },
   User: {
     fullName(root) {
-      console.log("호출자 객체", root)
-      return "고정된 풀네임"   // DB 데이터 상에 필드가 존재해도 무시된다
-    }
-  }
+      console.log("호출자 객체", root);
+      return "고정된 풀네임"; // DB 데이터 상에 필드가 존재해도 무시된다
+    },
+  },
+  Tweet: {
+    async author({userId}) {
+      const users = await getUsers();
+      return users.find(user => user.id === userId);
+    },
+  },
 };
 
 export {resolvers};
